@@ -4,3 +4,13 @@ build
 .gradle
 !.gitkeep
 .kotlin
+
+# Files the game writes when a run/gametest uses versions/<mc>/ as its working folder
+versions/*/.fabric/
+versions/*/logs/
+versions/*/config/
+versions/*/crash-reports/
+versions/*/screenshots/
+versions/*/saves/
+versions/*/options.txt
+versions/*/usercache.json
