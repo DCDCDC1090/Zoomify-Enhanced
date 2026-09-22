@@ -10,7 +10,7 @@
 
 ## What's different in this fork
 
-This is an unofficial custom build of isXander's Zoomify, built for Minecraft **26.3**. The Website, Issues and Source links in Mod Menu point to this fork, so problems with this build get reported here instead of to the official project. Everything else works the same as the official mod.
+This is an unofficial custom build of isXander's Zoomify, built for Minecraft **26.3**. The Website, Issues and Source links in Mod Menu point to this fork, so problems with this build get reported here instead of to the official project. Everything else works the same as the official mod currently.
 
 ## How to use
 Minecraft has a keybind that overrides Zoomify by default. Go to the controls menu and make sure the Zoomify keybind (default `C`) isn't conflicting (goes red).
