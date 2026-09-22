@@ -8,9 +8,9 @@
     "${mod_author}"
   ],
   "contact": {
-    "homepage": "https://isxander.dev",
-    "issues": "https://github.com/isXander/Zoomify/issues",
-    "sources": "https://github.com/isXander/Zoomify"
+    "homepage": "https://github.com/DCDCDC1090/Zoomify-Enhanced",
+    "issues": "https://github.com/DCDCDC1090/Zoomify-Enhanced/issues",
+    "sources": "https://github.com/DCDCDC1090/Zoomify-Enhanced"
   },
   "icon": "assets/zoomify/zoomify.png",
   "license": "${mod_license}",
