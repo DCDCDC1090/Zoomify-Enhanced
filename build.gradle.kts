@@ -248,3 +248,10 @@ fun <T> optionalProp(property: String, block: (String) -> T?) {
 fun isPropDefined(property: String): Boolean {
     return findProperty(property)?.toString()?.isNotBlank() ?: false
 }
+
+// Fork naming: jars are published as Zoomify-Enhanced-<version>.jar rather than zoomify-<version>.jar.
+// configureEach is used so this wins over whatever modstitch sets for the archive name.
+base.archivesName = "Zoomify-Enhanced"
+tasks.withType<AbstractArchiveTask>().configureEach {
+    archiveBaseName = "Zoomify-Enhanced"
+}
