@@ -11,7 +11,6 @@ plugins {
     `maven-publish`
     signing
     id("dev.isxander.secrets")
-    id("com.gradleup.nmcp")
     id("org.ajoberstar.grgit") version "5.3.2"
 }
 
@@ -93,7 +92,7 @@ dependencies {
 
     // mod menu compat
     optionalProp("deps.modMenu") {
-        modstitchModCompileOnly("com.terraformersmc:modmenu:$it")
+        modstitchModImplementation("com.terraformersmc:modmenu:$it")
     }
 
     optionalProp("deps.controlify") {
@@ -109,6 +108,19 @@ java {
 
 tasks.javadoc {
     isFailOnError = false
+}
+
+val modLoader = Attribute.of(
+    "io.github.mcgradleconventions.loader",
+    String::class.java
+)
+
+configurations.configureEach {
+    if (isCanBeResolved) {
+        attributes {
+            attribute(modLoader, "fabric")
+        }
+    }
 }
 
 kotlin {
@@ -173,6 +185,9 @@ publishMods {
         requires { slug.set("yacl") }
         requires { slug.set("fabric-language-kotlin") }
         optional { slug.set("modmenu") }
+
+        clientRequired = true
+        serverRequired = false
     }
 
     github {
@@ -213,6 +228,15 @@ publishing {
                     connection = "scm:git:git//github.com/isXander/Zoomify.git"
                     developerConnection = "scm:git:ssh://git@github.com/isXander/Zoomify.git"
                 }
+            }
+        }
+    }
+    repositories {
+        maven(url = "https://maven.isxander.dev/releases") {
+            name = "Xander"
+            credentials {
+                username = secrets.gradleProperty("maven.username").orNull
+                password = secrets.gradleProperty("maven.password").orNull
             }
         }
     }
